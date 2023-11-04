@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // 2)a)odd numbers in an array using arrow function
+
+    var odd=(arr)=>
+    {
+        for(var i=0;i<arr.length;i++)
+        {
+            if(arr[i]%2!==0)
+            {
+                console.log(arr[i])
+            }
+        }
+    }
+    odd([452,221,353,425,10,20,23])
+
+    // 2)b)title caps using arrow function
+
+    var titleCaps=(str)=>
+        {
+            str=str.toLowerCase().split(' ')
+            for(var i=0;i<str.length;i++)
+            {
+                str[i]=str[i][0].toUpperCase()+str[i].slice(1)
+                
+            }
+            console.log(str.join(' '))
+
+            
+        }
+        titleCaps("halima was my lovable sweet caring sister,daughter,friend,well wisher,companion etc")
+
+
+        //2)c) sum of all numbers in an array using arrow function
+
+        var total=(arr)=>{
+            var a=0
+            for(var i=0;i<arr.length;i++)
+            {
+                a+=arr[i]
+            }
+            console.log(a)
+        }
+        total([25,333,54,2])
+
+
+        // 2)d) prime numbers in ana array using arrow function
+        var a=[31,113,53,13,19,2,34,55]
+        var prime=(n)=>{
+            if(n==1)
+            {
+                return false
+            }
+            else if(n==2)
+            {
+                return true
+            }
+            else{
+                for(i=2;i<n;i++)
+                {
+                    if(n%i==0)
+                    {
+                        return false
+                    }
+                }
+                return true
+            }
+        }
+        function isPrime(a)
+        {
+            const filtered=a.filter((element)=>prime(element))
+            return filtered
+        }
+        console.log(isPrime(a))
+
+
+        // 2)e) palindrome using arrow function
+
+        var palindrome=(str)=>{
+            let a=str
+            str=str.split('').reverse('').join("")
+            return a==str
+        }
+        function isPalindrome(str){
+            var ans=[]
+            for(i=0;i<str.length;i++)
+            {
+            
+                if(palindrome(str[i]))
+                {
+                    ans.push(str[i])
+                }
+            }
+            return ans
+        }
+        console.log(isPalindrome(["madam","haameem","malayalam","hannah"]))
+    </script>
+</body>
+</html>

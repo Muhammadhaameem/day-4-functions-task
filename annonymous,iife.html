@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  1) a) Odd numbers  using Annonymous function
+        
+        var odd= function (arr)
+        {
+            for(var i=0;i<arr.length;i++)
+            {
+                if(arr[i]%2!==0)
+                {
+                    console.log(arr[i])
+                }
+            }
+        } 
+        odd([67,9,53,99,8,7,4,11,95,85])
+
+
+        // 1)a) using IIFE function
+
+        (
+            function (arr1)
+            {
+                for(var j=0;j<arr1.length;j++)
+                {
+                    if(arr1[j]%2!==0)
+                    {
+                        console.log(arr1[j])
+                    }
+                }
+            }
+        )([52,47,9,89,46,23])
+
+        // 1)b) Title caps using annonymous function
+
+        var titleCaps=function(str)
+        {
+            str=str.toLowerCase().split(' ')
+            for(var i=0;i<str.length;i++)
+            {
+                str[i]=str[i][0].toUpperCase()+str[i].slice(1)
+                
+            }
+            console.log(str.join(' '))
+
+            
+        }
+        titleCaps("java script was more poweful language")
+
+        // 1)b) using IIFE function
+        (
+            function (str1)
+            {
+                str1=str1.split(' ')
+                for(var i=0;i<str1.length;i++)
+                {
+                    str1[i]=str1[i][0].toUpperCase()+str1[i].slice(1)
+                }
+                console.log( str1.join(' '))
+                
+            }
+        )
+       ("am always love both side of my family")
+
+    //   1) c) sum of elements in an array using annonymous function
+
+       var addition=function (array)
+       {
+        var sum=0
+        for(var i=0;i<array.length;i++)
+        {
+         
+         sum+=array[i]
+        }
+        console.log(sum)
+       }
+        addition([20,45])
+
+        // 1)c) using IIFE function
+        (
+            function (array)
+            {
+                var sum=0
+                for(var i=0;i<array.length;i++)
+                {
+                    sum+=array[i]
+                }
+                console.log(sum)
+            }
+        )([62,44,87,20])
+
+        //  1) d) prime number in an array using annonymous function
+
+        var a=[59,23,39,42,13,11,3,37,2,1]
+        const isPrime=function (n){
+            if(n==1)
+            {
+                return false
+            }
+            else if(n==2)
+            {
+                return true
+            }
+            else
+            {
+                for(let i=2;i<n;i++)
+                {
+                    if(n%i==0)
+                    {
+                        return false
+                    }
+                }
+                return true
+            }
+        }
+        const filterPrime=a=>{
+            const filtered=a.filter((element)=>isPrime(element))
+            return filtered
+        }
+        console.log(filterPrime(a))
+
+        // 1)d)by using IIFE function
+
+        var b=[59,23,39,42,13,11,3,37,43,113]
+        
+            function prime (n)
+            {
+                if(n==1)
+                {
+                    return false
+                }
+                else if(n==2)
+                {
+                    return true
+                }
+                else{
+                    for(var i=2;i<n;i++)
+                    {
+                        if(n%i==0)
+                        {
+                            return false
+                        }
+                    }
+                    return true
+                }
+            }
+          
+            ( function (b){
+                const filtered=b.filter((element)=>prime(element))
+                console.log(filtered)
+            }
+            )(b)
+
+        //  1)e) palindromes in an array using annonymous function
+
+        var isPalindrome=function(s)
+        {
+            let a=s
+            s=s.split('').reverse('').join('')
+            return a==s
+        }
+
+        var palindromeArray=function(s)
+        {
+            var ans=[]
+            for(var i=0;i<s.length;i++)
+            {
+                if(isPalindrome(s[i]))
+                {
+                   ans.push(s[i])
+                }
+            }
+            return ans
+        }
+       console.log( palindromeArray(["hannah","eye","race car","halima","sahadhiya"]))
+
+    //    1)e) using IIFE function
+
+    var isPalindrome = function (s) {
+      let a = s;
+      s = s.split('').reverse().join(''); 
+      return a == s;
+    };
+    
+    (function (s) {
+      let ans = [];
+      for (var i = 0; i < s.length; i++) {
+        if (isPalindrome(s[i])) {
+          ans.push(s[i]);
+        }
+      }
+      console.log(ans);
+    })(["hannah", "eye", "madam", "palindrome"]);
+
+    // 1)f) median of two sorted arrays using annonymous function
+
+    var median=function(arr1,arr2){
+        var merge=arr1.concat(arr2)
+        if(merge.length%2==0)
+        {
+            let ans1=(merge.length/2 + merge.length/2+1)/2
+            console.log(ans1)
+        }
+        else{
+            let ans2=merge.length/2
+            console.log(ans2)
+        }
+    }
+    median([1,2,3,4],[5,6,7,8])
+
+    // 1)f) using IIFE function
+
+    (
+        function(arr1,arr2)
+        {
+            var merge=arr1.concat(arr2)
+            if(merge.length%2==0)
+            {
+                let ans1=(merge.length/2 + merge.length/2+1)/2
+                console.log(ans1)
+            }
+            else
+            {
+                let ans2=merge.length/2
+                console.log(ans2)
+            }
+        }
+    )([1,2,3,4],[5,6,7,8])
+
+    // 1)g) remove duplicate using annonymous function
+
+    let arr=["halima","ansara","haneen","halidh","asmiya","asliha","ansara","halima","asmiya","halima"]
+
+    var removeDuplicate=function (arr)
+    {
+        return arr.filter((item,index)=> arr.indexOf(item)===index)
+        
+    }
+    console.log(removeDuplicate(arr))
+
+
+    // 1)g) using IIFE function
+
+    (
+        function removeDuplicate(arr)
+        {
+            var ans= arr.filter((item,index)=>arr.indexOf(item)===index)
+            console.log(ans)
+        }
+       
+    )(["halima","ansara","haneen","halidh","asmiya","asliha","ansara","halima","asmiya","halima"])
+
+    // 1)h) rotate array by k times using annonymous function
+
+    const rotateArray=function (arr,k)
+    {
+        for(i=0;i<k;i++)
+        {
+            arr.unshift(arr.pop())
+            
+        }
+        return arr
+    }
+    console.log(rotateArray([1,2,3,4,5,6,7],5))
+
+    //1)h) using IIFE function
+
+    (
+        function (arr,k)
+        {
+            for(var i=0;i<k;i++)
+            {
+                arr.unshift(arr.pop())
+            }
+           
+            console.log(arr)
+        }
+        
+    )([1,2,3,4,5,6,7,8],4)
+
+   
+    </script>
+</body>
+</html>
